@@ -2,7 +2,9 @@
 
 ## Autor
 ```
-Jorge Muñoz Taylor
+Jorge Muñoz Taylor 
+A53863
+jorge.munoztaylor@ucr.ac.cr
 ```
 
 ## Como ejecutar el código
@@ -15,10 +17,9 @@ En el archivo xy.csv está el registro de la frecuencia relativa de dos variable
 
 ## Solución
 
-***
-1. A partir de los datos, encontrar la mejor curva de ajuste (modelo probabilístico) para las funciones de densidad 
-marginales de X y Y.
-***
+
+###### 1. A partir de los datos, encontrar la mejor curva de ajuste (modelo probabilístico) para las funciones de densidad marginales de X y Y.
+
 
 ---
 
