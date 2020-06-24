@@ -22,27 +22,12 @@ En el archivo xy.csv está el registro de la frecuencia relativa de dos variable
 
 
 ---
+##### 2. Asumir independencia de X y Y. Analíticamente, ¿cuál es entonces la expresión de la función de densidad conjunta que modela los datos?
 
-```
-2. ¿Son independientes los datos? Diseñar una prueba de independencia para los datos disponibles.
-```
 
 ---
+##### 3. Hallar los valores de correlación, covarianza y coeficiente de correlación (Pearson) para los datos y explicar su significado.
 
-```
-3. Si son independientes, ¿cuál es entonces la función de densidad conjunta que modela los datos?
-```
 
 ---
-
-```
-4. Hallar los valores de correlación y covarianza y explicar su significado.
-```
-
----
-
-```
-5. Graficar las funciones de densidad marginales (2D), la función de densidad conjunta (3D).
-```
-
----
+##### 4. Graficar las funciones de densidad marginales (2D), la función de densidad conjunta (3D).
