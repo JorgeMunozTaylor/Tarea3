@@ -10,10 +10,9 @@ jorge.munoztaylor@ucr.ac.cr
 ## Como ejecutar el código
 ```
 >>python3 tarea3 xy.csv
->>python3 tarea3 xyp.csv
 ```
 
-En el archivo xy.csv está el registro de la frecuencia relativa de dos variables aleatorias conjuntas en forma de tabla. También está el archivo xyp.csv donde vienen todos los pares (x, y) y su probabilidad asociada.
+En el archivo xy.csv está el registro de la frecuencia relativa de dos variables aleatorias conjuntas en forma de tabla. También está el archivo xyp.csv donde vienen todos los pares (x, y) y su probabilidad asociada sin embargo el código se creó en base al archivo xy.csv.
 
 
 ## Bibliotecas necesarias
@@ -32,7 +31,7 @@ math
 
 A partir de los datos, analíticamente se puede observar que la curva que mejor se ajusta a los datos es la correspondiente a la función de densidad Normal (Gaussiana), note como el modelo tiene prácticamente el mismo recorrido de los datos -tome en cuenta que los datos presentan ruido-
 
-![image info](imagenes/pmf_x_dist.png){: width=320 height=240}
+![image info|320x240](imagenes/pmf_x_dist.png)
 ![image info](imagenes/pmf_y_dist.png)
 
 ---
