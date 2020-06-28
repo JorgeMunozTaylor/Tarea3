@@ -32,8 +32,8 @@ math
 
 A partir de los datos, analíticamente se puede observar que la curva que mejor se ajusta a los datos es la correspondiente a la función de densidad Normal (Gaussiana), note como el modelo tiene prácticamente el mismo recorrido de los datos -tome en cuenta que los datos presentan ruido-
 
-![image info](imagenes/pmf_x?dist.png){width=70%}
-![image info](imagenes/pmf_y?dist.png){width=70%}
+![image info](imagenes/pmf_x_dist.png =320x240)
+![image info](imagenes/pmf_y_dist.png =320x240)
 
 ---
 ##### 2. Asumir independencia de X y Y. Analíticamente, ¿cuál es entonces la expresión de la función de densidad conjunta que modela los datos?
@@ -48,6 +48,6 @@ A partir de los datos, analíticamente se puede observar que la curva que mejor 
 ---
 ##### 4. Graficar las funciones de densidad marginales (2D), la función de densidad conjunta (3D).
 
-![image info](imagenes/pmf_x.png){width=70%}
-![image info](imagenes/pmf_y.png){width=70%}
-![image info](imagenes/3d.png){width=70%}
+![image info](imagenes/pmf_x.png =320x240)
+![image info](imagenes/pmf_y.png =320x240)
+![image info](imagenes/3d.png =320x240)
