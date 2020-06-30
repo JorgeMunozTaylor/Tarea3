@@ -29,9 +29,14 @@ En el archivo xy.csv está el registro de la frecuencia relativa de dos variable
 
 #### 1. A partir de los datos, encontrar la mejor curva de ajuste (modelo probabilístico) para las funciones de densidad marginales de *X* y *Y*.
 
-A partir de los datos, analíticamente se puede observar que la curva que mejor se ajusta a los datos (tanto para *X* como para *Y*) es la correspondiente a la función de densidad Normal (Gaussiana), note de las gráficas como el modelo tiene prácticamente el mismo recorrido de los datos -tome en cuenta que los datos presentan ruido-. En el código se mostrarán los valores de la media y la desviación estándar del modelo normal para *X* e *Y*.
+Analíticamente se puede observar que la curva que mejor se ajusta a los datos (tanto para *X* como para *Y*) es la correspondiente a la función de densidad **Normal (Gaussiana)**, note en las gráficas como el modelo tiene prácticamente el mismo recorrido de los datos -tome en cuenta que los datos presentan ruido-. En el código se muestran los valores de la media y la desviación estándar del modelo encontrado para *X* e *Y*.
+
+- Mosaico con 4 modelos de distribución ajustados a *X*.
 
 ![image info](imagenes/pmf_x_dist.png)
+
+- Mosaico con 4 modelos de distribución ajustados a *Y*.
+
 ![image info](imagenes/pmf_y_dist.png)
 
 ---
@@ -71,6 +76,11 @@ El coeficiente de Pearson mide la dependencia lineal entre dos variables aleator
 ---
 #### 4. Graficar las funciones de densidad marginales (2D), la función de densidad conjunta (3D).
 
+- Modelo de mejor ajuste de *X*.
 ![image info](imagenes/pmf_x.png)
+
+- Modelo de mejor ajuste de *Y*.
 ![image info](imagenes/pmf_y.png)
+
+- Densidad conjunta de las variables aleatorias *X* e *Y*
 ![image info](imagenes/3d.png)
