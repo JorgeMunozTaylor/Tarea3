@@ -40,7 +40,9 @@ A partir de los datos, analíticamente se puede observar que la curva que mejor 
  Como asumimos que X e Y son independientes entonces la función de densidad conjunta 
  
 
- ![primera](https://latex.codecogs.com/gif.latex?%5Csum%20kjkkj)
+ ![fxfy](https://latex.codecogs.com/gif.latex?f_%7BX%2CY%7D%28x%2Cy%29%20%3D%20%5Cfrac%7B1%7D%7B%5Csigma%5Csqrt%7B2%5Cpi%7D%7De%5E%7B%20-%5Cfrac%7B%28x-%5Cmu%29%5E2%7D%7B2%5Csigma%5E2%7D%20%7D%20%5Ccdot%20%5Cfrac%7B1%7D%7B%5Csigma%5Csqrt%7B2%5Cpi%7D%7De%5E%7B%20-%5Cfrac%7B%28y-%5Cmu%29%5E2%7D%7B2%5Csigma%5E2%7D%20%7D)
+
+ ![final](https://latex.codecogs.com/gif.latex?%5Crightarrow%20f_%7BX%2CY%7D%28x%2Cy%29%20%3D%20%5Cfrac%7B1%7D%7B2%5Cpi%20%5Csigma%5E2%7D%20e%5E%7B%20-%5Cfrac%7B1%7D%7B2%5Csigma%5E2%7D%20%28%20%28x-%5Cmu%29%5E2&plus;%28y-%5Cmu%29%5E2%20%29%20%7D)
 
  
 \frac{1}{2}
