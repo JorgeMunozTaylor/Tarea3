@@ -32,11 +32,11 @@ En el archivo xy.csv está el registro de la frecuencia relativa de dos variable
 Analíticamente se puede observar que la curva que mejor se ajusta a los datos (tanto para *X* como para *Y*) es la correspondiente a la función de densidad **Normal (Gaussiana)**, note en las gráficas como el modelo tiene prácticamente el mismo recorrido de los datos -tome en cuenta que los datos presentan ruido-. En el código se muestran los valores de la media y la desviación estándar del modelo encontrado para *X* e *Y*.
 
 - Mosaico con 4 modelos de distribución ajustados a *X*.
-
-![image info](imagenes/pmf_x_dist.png)
+| ![image info](imagenes/pmf_x_dist.png) |
+|:--:|
+| *asdadd* |
 
 - Mosaico con 4 modelos de distribución ajustados a *Y*.
-
 ![image info](imagenes/pmf_y_dist.png)
 
 ---
