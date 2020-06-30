@@ -18,10 +18,10 @@ En el archivo xy.csv está el registro de la frecuencia relativa de dos variable
 ## Bibliotecas necesarias
 
 ```
-numpy
-Matplotlib
-Scipy
-math
+* numpy
+* Matplotlib
+* Scipy
+* math
 ```
 
 ## Solución
@@ -29,7 +29,7 @@ math
 
 #### 1. A partir de los datos, encontrar la mejor curva de ajuste (modelo probabilístico) para las funciones de densidad marginales de X y Y.
 
-A partir de los datos, analíticamente se puede observar que la curva que mejor se ajusta a los datos es la correspondiente a la función de densidad Normal (Gaussiana), note como el modelo tiene prácticamente el mismo recorrido de los datos -tome en cuenta que los datos presentan ruido-
+A partir de los datos, analíticamente se puede observar que la curva que mejor se ajusta a los datos (tanto para X como para Y) es la correspondiente a la función de densidad Normal (Gaussiana), note de las gráficas como el modelo tiene prácticamente el mismo recorrido de los datos -tome en cuenta que los datos presentan ruido-. En el código se mostrarán los valores de la media y la desviación estándar del modelo normal para X e Y.
 
 ![image info](imagenes/pmf_x_dist.png)
 ![image info](imagenes/pmf_y_dist.png)
@@ -37,7 +37,13 @@ A partir de los datos, analíticamente se puede observar que la curva que mejor 
 ---
 #### 2. Asumir independencia de X y Y. Analíticamente, ¿cuál es entonces la expresión de la función de densidad conjunta que modela los datos?
 
- Asumimos que X e Y son independientes, entonces las 
+ Como asumimos que X e Y son independientes entonces la función de densidad conjunta 
+ 
+ $$
+\frac{1}{2}
+ $$
+ 
+ fX,Y(x,y) = fX(x) * fY(y)
 
 ---
 #### 3. Hallar los valores de correlación, covarianza y coeficiente de correlación (Pearson) para los datos y explicar su significado.
