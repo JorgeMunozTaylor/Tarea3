@@ -21,7 +21,7 @@ from mpl_toolkits.mplot3d import Axes3D #Permite generar gráficos en 3D.
 from matplotlib import cm
 from matplotlib.ticker import LinearLocator, FormatStrFormatter 
 
-from scipy.optimize import curve_fit
+from scipy.optimize import curve_fit #Modulo que sirve para encontrar la curva de mejor ajuste.
 from math import sqrt #Raíz cuadrada.
 import warnings
 #Elimina el overflow que ocurre en la exponencial con Y, no afecta a la gráfica es sólo por
@@ -73,15 +73,16 @@ if __name__=="__main__":
     #Se lee el archivo xp.csv y se coloca en un array tipo numpy. 
     DATOS = np.genfromtxt (archivo[1], delimiter=',')
 
+    #Se eliminan la primera fila y la primera columna.
     DATOS = np.delete (DATOS,0,0)
     DATOS = np.delete (DATOS,0,1)
 
+    #Creamos los vectores X e Y con sus respectivos valores.
     X = np.linspace (5,15,11,dtype="int")
     Y = np.linspace (5,25,21,dtype="int")
     
     #Calcula la densidad marginal de cada fila X.
     pmf_X = np.sum (DATOS, axis=1) # axis=1 son filas
-
 
     #Ajusta la curva rayleig a la densidad marginal de X.
     X_ray_fit_vals, _    = curve_fit (rayleigh, X ,pmf_X )
@@ -92,7 +93,6 @@ if __name__=="__main__":
     #Ajusta la curva exponencial a la densidad marginal de X.
     X_exp_fit_vals, _    = curve_fit (exponencial, X ,pmf_X )
     
-
     #Calcula la densidad marginal de cada columna Y.
     pmf_Y = np.sum (DATOS, axis=0) # axis=0 son columnas
 
@@ -105,6 +105,7 @@ if __name__=="__main__":
     #Ajusta la curva exponencial a la densidad marginal de X.
     Y_exp_fit_vals, _    = curve_fit (exponencial, Y ,pmf_Y )    
 
+    print ("Datos para la función de distribución NORMAL:\n")
     print ("-> Media de X: ", X_normal_fit_vals[1] )
     print ("-> Desviación estándar de X: ", X_normal_fit_vals[0], "\n" )
     print ("-> Media de Y: ", Y_normal_fit_vals[1] )
@@ -113,8 +114,11 @@ if __name__=="__main__":
 
     #--- Para X ---
 
+    #Crea una figura con 4 subdivisiones, una por imágen.
     fig,axs = plt.subplots (2,2)
 
+    #Primero se creará la curva de mejor ajuste con una línea roja punteada, encima de esta
+    #se colocará el modelo que se esté analizando: rayleigh, normal, uniforme o exponenical.
     axs[0,0].plot   (X, pmf_X, 'r--', alpha=0.5, label='pmf de X')
     axs[0,0].set_title ('Rayleigh')
     axs[0,0].plot   (X, rayleigh( X, *X_ray_fit_vals ), lw=4, label='Rayleigh' )
@@ -135,19 +139,25 @@ if __name__=="__main__":
     axs[1,1].plot   (X, exponencial( X, *X_exp_fit_vals ), lw=4, label='Exponencial' )
     axs[1,1].legend ()
     
+    #Coloca los ejes a cada figura.
     for ax in axs.flat:
-        ax.set(xlabel='Datos', ylabel='Densidad marginal')
+        ax.set(xlabel='Datos X', ylabel='Probabilidad')
 
     for ax in axs.flat:
         ax.label_outer()
 
+    #Imprime la imágen y la guarda.
     plt.savefig("imagenes/pmf_x_dist.png")
     plt.show()
 
   
     #--- Para Y ---
+
+    #Crea una figura con 4 subdivisiones, una por imágen.
     fig,axs = plt.subplots (2,2)
 
+    #Primero se creará la curva de mejor ajuste con una línea roja punteada, encima de esta
+    #se colocará el modelo que se esté analizando: rayleigh, normal, uniforme o exponenical.
     axs[0,0].plot    (Y, pmf_Y, 'r--', alpha=0.5, label='pmf de Y')
     axs[0,0].set_title ('Rayleigh')
     axs[0,0].plot    (Y, rayleigh( Y, *Y_ray_fit_vals ), lw=4, label='Rayleigh' )
@@ -168,12 +178,14 @@ if __name__=="__main__":
     axs[1,1].plot   (Y, exponencial( Y, *Y_exp_fit_vals ), lw=4, label='Exponencial' )
     axs[1,1].legend ()
 
+    #Coloca los ejes a cada figura.
     for ax in axs.flat:
-        ax.set(xlabel='Datos', ylabel='Densidad marginal')
+        ax.set(xlabel='Datos Y', ylabel='Probabilidad')
 
     for ax in axs.flat:
         ax.label_outer()
 
+    #Imprime la imágen y la guarda.
     plt.savefig("imagenes/pmf_y_dist.png")
     plt.show()
 
@@ -193,13 +205,13 @@ if __name__=="__main__":
 
     #--- Correlación ---
 
-    COLUMNA    = 0
-    FILA       = 0
-    CORRELACION = 0
+    COLUMNA     = 0 #Variable que llevará el conteo de columnas.
+    FILA        = 0 #Variable que llevará el conteo de filas.
+    CORRELACION = 0 #Variable, sumará el resultado de multiplicar Fila*Columna*Probabilidad.
 
     for i in Y: #Recorre por columnas
         for j in X: #Recorre por filas
-            CORRELACION = CORRELACION + i*j*DATOS [FILA][COLUMNA]
+            CORRELACION = CORRELACION + i*j*DATOS [FILA][COLUMNA] #Fila*Columna*Probabilidad.
             FILA = FILA+1
 
         COLUMNA = COLUMNA+1
@@ -210,9 +222,9 @@ if __name__=="__main__":
 
     #--- Covarianza ---
 
-    COVARIANZA = 0
-    COLUMNA    = 0
-    FILA       = 0
+    COLUMNA    = 0 #Variable que llevará el conteo de columnas.
+    FILA       = 0 #Variable que llevará el conteo de filas.
+    COVARIANZA = 0 #Variable, dará el valor final de la covarianza.
 
     for i in Y: #Recorre por columnas
         for j in X: #Recorre por filas
@@ -227,6 +239,8 @@ if __name__=="__main__":
 
     #--- Coeficiente de correlación (Pearson) ---
 
+    #El coeficiente de Pearson es igual a la covarianza entre la multiplicación
+    #de la desviación estándar de los modelos.
     pearson = COVARIANZA / ( X_normal_fit_vals[0] * Y_normal_fit_vals[0] )
     print ("-> Coeficiente de correlación (Pearson): ", pearson)
 
@@ -237,25 +251,30 @@ if __name__=="__main__":
 
     #--- Genera los gráficos de distribución marginal para X e Y ---
 
+    print ("\n******** PREGUNTA 4 ********\n")
+    print ("-> Generando el gráfico de distribución marginal de X ...")
+
     plt.plot    (X, pmf_X, 'b', lw=5, alpha=1, label='pmf de X')
-    plt.xlabel  ('Datos')
-    plt.ylabel  ('Densidad marginal')
+    plt.xlabel  ('X')
+    plt.ylabel  ('Densidad marginal de X')
     plt.legend  ()
     plt.savefig("imagenes/pmf_x.png")
     plt.show()
 
+    print ("-> Generando el gráfico de distribución marginal de Y ...")
     plt.plot    (Y, pmf_Y, 'b', lw=5, alpha=1, label='pmf de Y')
-    plt.xlabel  ('Datos')
-    plt.ylabel  ('Densidad marginal')
+    plt.xlabel  ('Y')
+    plt.ylabel  ('Densidad marginal de Y')
     plt.legend  ()
     plt.savefig("imagenes/pmf_y.png")
     plt.show()
 
     #--- Genera el gráfico 3D ---
 
+    print ("-> Generando la gráfica de la función de densidad conjunta ...")
     fig = plt.figure()
-    ax = fig.gca(projection='3d')
-    X, Y = np.meshgrid(X, Y)
+    ax = fig.gca(projection='3d') #Indica que se generará un gráfico en 3D.
+    X, Y = np.meshgrid(X, Y) #Transforma los vectores x,y al formato usado por el módulo.
 
     # Se generan los datos que se usarán para colocar los puntos en Z.
     Z = normal( X, *X_normal_fit_vals ) * normal( Y, *Y_normal_fit_vals )
