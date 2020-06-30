@@ -39,6 +39,9 @@ A partir de los datos, analíticamente se puede observar que la curva que mejor 
 
  Como asumimos que X e Y son independientes entonces la función de densidad conjunta 
  
+
+ ![primera]{https://latex.codecogs.com/gif.latex?%5Csum%20kjkkj}
+
  $$
 \frac{1}{2}
  $$
